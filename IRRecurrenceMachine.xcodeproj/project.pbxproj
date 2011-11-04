@@ -1,0 +1,228 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF22282D1463C77300541E31 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF22282C1463C77300541E31 /* Foundation.framework */; };
+		FF2228331463C77300541E31 /* IRRecurrenceMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2228321463C77300541E31 /* IRRecurrenceMachine.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FF2228291463C77300541E31 /* libIRRecurrenceMachine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIRRecurrenceMachine.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF22282C1463C77300541E31 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FF2228301463C77300541E31 /* IRRecurrenceMachine-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IRRecurrenceMachine-Prefix.pch"; sourceTree = "<group>"; };
+		FF2228311463C77300541E31 /* IRRecurrenceMachine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IRRecurrenceMachine.h; sourceTree = "<group>"; };
+		FF2228321463C77300541E31 /* IRRecurrenceMachine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IRRecurrenceMachine.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF2228261463C77300541E31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF22282D1463C77300541E31 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FF22281E1463C77300541E31 = {
+			isa = PBXGroup;
+			children = (
+				FF22282E1463C77300541E31 /* IRRecurrenceMachine */,
+				FF22282B1463C77300541E31 /* Frameworks */,
+				FF22282A1463C77300541E31 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FF22282A1463C77300541E31 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF2228291463C77300541E31 /* libIRRecurrenceMachine.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF22282B1463C77300541E31 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF22282C1463C77300541E31 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FF22282E1463C77300541E31 /* IRRecurrenceMachine */ = {
+			isa = PBXGroup;
+			children = (
+				FF2228311463C77300541E31 /* IRRecurrenceMachine.h */,
+				FF2228321463C77300541E31 /* IRRecurrenceMachine.m */,
+				FF22282F1463C77300541E31 /* Supporting Files */,
+			);
+			path = IRRecurrenceMachine;
+			sourceTree = "<group>";
+		};
+		FF22282F1463C77300541E31 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FF2228301463C77300541E31 /* IRRecurrenceMachine-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		FF2228271463C77300541E31 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		FF2228281463C77300541E31 /* IRRecurrenceMachine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF2228361463C77300541E31 /* Build configuration list for PBXNativeTarget "IRRecurrenceMachine" */;
+			buildPhases = (
+				FF2228251463C77300541E31 /* Sources */,
+				FF2228261463C77300541E31 /* Frameworks */,
+				FF2228271463C77300541E31 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IRRecurrenceMachine;
+			productName = IRRecurrenceMachine;
+			productReference = FF2228291463C77300541E31 /* libIRRecurrenceMachine.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF2228201463C77300541E31 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = FF2228231463C77300541E31 /* Build configuration list for PBXProject "IRRecurrenceMachine" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FF22281E1463C77300541E31;
+			productRefGroup = FF22282A1463C77300541E31 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF2228281463C77300541E31 /* IRRecurrenceMachine */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF2228251463C77300541E31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF2228331463C77300541E31 /* IRRecurrenceMachine.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FF2228341463C77300541E31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FF2228351463C77300541E31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FF2228371463C77300541E31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/IRRecurrenceMachine.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IRRecurrenceMachine/IRRecurrenceMachine-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		FF2228381463C77300541E31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/IRRecurrenceMachine.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IRRecurrenceMachine/IRRecurrenceMachine-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF2228231463C77300541E31 /* Build configuration list for PBXProject "IRRecurrenceMachine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF2228341463C77300541E31 /* Debug */,
+				FF2228351463C77300541E31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF2228361463C77300541E31 /* Build configuration list for PBXNativeTarget "IRRecurrenceMachine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF2228371463C77300541E31 /* Debug */,
+				FF2228381463C77300541E31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FF2228201463C77300541E31 /* Project object */;
+}
