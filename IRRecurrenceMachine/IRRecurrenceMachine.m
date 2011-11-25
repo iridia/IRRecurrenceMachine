@@ -23,6 +23,16 @@
 @synthesize queue, recurrenceInterval, recurringOperations, postponingRequestCount;
 @synthesize timer;
 
+- (void) dealloc {
+
+	[queue release];
+	[recurringOperations release];
+	[timer invalidate];
+	[timer release];
+	[super dealloc];
+
+}
+
 - (id) init {
 	
 	return [self initWithQueue:nil];
@@ -40,6 +50,7 @@
 	
 	self.queue = aQueue;
 	self.recurrenceInterval = 30;
+	self.recurringOperations = [NSArray array];
 	
 	[self timer];
 	
@@ -66,7 +77,9 @@
 	
 	[self didChangeValueForKey:@"recurrenceInterval"];
 	
-	[self.timer invalidate];
+	[timer invalidate];
+	[timer release];
+	timer = nil;
 	
 	if (![self isPostponingOperations])
 		[self timer];
@@ -98,12 +111,12 @@
 	
 	[self beginPostponingOperations];
 	
-	[recurringOperations enumerateObjectsUsingBlock: ^ (NSOperation *operationPrototype, NSUInteger idx, BOOL *stop) {
+	[self.recurringOperations enumerateObjectsUsingBlock: ^ (NSOperation *operationPrototype, NSUInteger idx, BOOL *stop) {
 		
 		NSOperation *prefix = [[self newPostponingWrapperPrefix] autorelease];
 		NSOperation *operation = [[operationPrototype copy] autorelease];
 		NSOperation *suffix = [[self newPostponingWrapperPrefix] autorelease];
-	
+		
 		[operation addDependency:prefix];
 		[suffix addDependency:operation];
 	
@@ -123,9 +136,9 @@
 	
 	__block typeof(self) nrSelf = self;
 	
-	return [NSBlockOperation blockOperationWithBlock: ^ {
+	return [[NSBlockOperation blockOperationWithBlock: ^ {
 		[nrSelf beginPostponingOperations];
-	}];
+	}] retain];
 	
 }
 
@@ -133,9 +146,9 @@
 	
 	__block typeof(self) nrSelf = self;
 	
-	return [NSBlockOperation blockOperationWithBlock: ^ {
+	return [[NSBlockOperation blockOperationWithBlock: ^ {
 		[nrSelf endPostponingOperations];
-	}];
+	}] retain];
 	
 }
 
