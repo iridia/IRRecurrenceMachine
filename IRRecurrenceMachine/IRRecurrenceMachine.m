@@ -13,7 +13,7 @@
 @property (nonatomic, readwrite, retain) NSOperationQueue *queue;
 @property (nonatomic, readwrite, retain) NSArray *recurringOperations;
 @property (nonatomic, readwrite, retain) NSTimer *timer;
-@property (nonatomic, readwrite, assign) NSUInteger postponingRequestCount;
+@property (nonatomic, readwrite, assign) NSInteger postponingRequestCount;
 
 @end
 
@@ -115,7 +115,7 @@
 		
 		NSOperation *prefix = [[self newPostponingWrapperPrefix] autorelease];
 		NSOperation *operation = [[operationPrototype copy] autorelease];
-		NSOperation *suffix = [[self newPostponingWrapperPrefix] autorelease];
+		NSOperation *suffix = [[self newPostponingWrapperSuffix] autorelease];
 		
 		[operation addDependency:prefix];
 		[suffix addDependency:operation];
@@ -153,6 +153,13 @@
 }
 
 - (void) beginPostponingOperations {
+
+	if (![NSThread isMainThread]) {
+		[self performSelectorOnMainThread:_cmd withObject:nil waitUntilDone:YES];
+		return;
+	}
+	
+	NSParameterAssert([NSThread isMainThread]);
 	
 	self.postponingRequestCount += 1;
 	
@@ -166,6 +173,13 @@
 }
 
 - (void) endPostponingOperations {
+
+	if (![NSThread isMainThread]) {
+		[self performSelectorOnMainThread:_cmd withObject:nil waitUntilDone:YES];
+		return;
+	}
+	
+	NSParameterAssert([NSThread isMainThread]);
 	
 	NSParameterAssert(postponingRequestCount > 0);
 	self.postponingRequestCount -= 1;

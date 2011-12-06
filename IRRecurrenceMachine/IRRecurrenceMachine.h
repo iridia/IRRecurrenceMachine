@@ -42,7 +42,7 @@
 - (void) beginPostponingOperations;
 - (void) endPostponingOperations;
 - (BOOL) isPostponingOperations;
-@property (nonatomic, readonly, assign) NSUInteger postponingRequestCount;
+@property (nonatomic, readonly, assign) NSInteger postponingRequestCount;
 
 //	Instead of locking and unlocking the operation queue, which might not always be an option,
 //	this set of methods simply work on the internal timer held by the recurrence machine.
