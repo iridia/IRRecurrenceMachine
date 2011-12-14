@@ -99,8 +99,11 @@
 
 - (void) handleTimerFire:(NSTimer *)aTimer {
 	
-	BOOL didSchedule = [self scheduleOperationsNow];
-	NSParameterAssert(didSchedule);
+	//	BOOL didSchedule = 
+	[self scheduleOperationsNow];
+	
+	
+	//	NSParameterAssert(didSchedule);
 	
 }
 
