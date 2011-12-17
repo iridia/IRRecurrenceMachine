@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		FF22282D1463C77300541E31 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF22282C1463C77300541E31 /* Foundation.framework */; };
 		FF2228331463C77300541E31 /* IRRecurrenceMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2228321463C77300541E31 /* IRRecurrenceMachine.m */; };
+		FF460D16149CF8B800DB7F0B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF460D15149CF8B800DB7F0B /* Cocoa.framework */; };
+		FF460D20149CF8B800DB7F0B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF460D1E149CF8B800DB7F0B /* InfoPlist.strings */; };
+		FF460D24149CF8B800DB7F0B /* IRRecurrenceMachineX.m in Sources */ = {isa = PBXBuildFile; fileRef = FF460D23149CF8B800DB7F0B /* IRRecurrenceMachineX.m */; };
+		FF460D29149CF8CE00DB7F0B /* IRRecurrenceMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2228321463C77300541E31 /* IRRecurrenceMachine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +21,16 @@
 		FF2228301463C77300541E31 /* IRRecurrenceMachine-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IRRecurrenceMachine-Prefix.pch"; sourceTree = "<group>"; };
 		FF2228311463C77300541E31 /* IRRecurrenceMachine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IRRecurrenceMachine.h; sourceTree = "<group>"; };
 		FF2228321463C77300541E31 /* IRRecurrenceMachine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IRRecurrenceMachine.m; sourceTree = "<group>"; };
+		FF460D14149CF8B800DB7F0B /* IRRecurrenceMachineX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IRRecurrenceMachineX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF460D15149CF8B800DB7F0B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		FF460D18149CF8B800DB7F0B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		FF460D19149CF8B800DB7F0B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FF460D1A149CF8B800DB7F0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FF460D1D149CF8B800DB7F0B /* IRRecurrenceMachineX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IRRecurrenceMachineX-Info.plist"; sourceTree = "<group>"; };
+		FF460D1F149CF8B800DB7F0B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FF460D21149CF8B800DB7F0B /* IRRecurrenceMachineX-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IRRecurrenceMachineX-Prefix.pch"; sourceTree = "<group>"; };
+		FF460D22149CF8B800DB7F0B /* IRRecurrenceMachineX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IRRecurrenceMachineX.h; sourceTree = "<group>"; };
+		FF460D23149CF8B800DB7F0B /* IRRecurrenceMachineX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IRRecurrenceMachineX.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +42,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FF460D10149CF8B800DB7F0B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF460D16149CF8B800DB7F0B /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -35,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				FF22282E1463C77300541E31 /* IRRecurrenceMachine */,
+				FF460D1B149CF8B800DB7F0B /* IRRecurrenceMachineX */,
 				FF22282B1463C77300541E31 /* Frameworks */,
 				FF22282A1463C77300541E31 /* Products */,
 			);
@@ -44,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				FF2228291463C77300541E31 /* libIRRecurrenceMachine.a */,
+				FF460D14149CF8B800DB7F0B /* IRRecurrenceMachineX.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -52,6 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				FF22282C1463C77300541E31 /* Foundation.framework */,
+				FF460D15149CF8B800DB7F0B /* Cocoa.framework */,
+				FF460D17149CF8B800DB7F0B /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -74,10 +100,47 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FF460D17149CF8B800DB7F0B /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF460D18149CF8B800DB7F0B /* AppKit.framework */,
+				FF460D19149CF8B800DB7F0B /* CoreData.framework */,
+				FF460D1A149CF8B800DB7F0B /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		FF460D1B149CF8B800DB7F0B /* IRRecurrenceMachineX */ = {
+			isa = PBXGroup;
+			children = (
+				FF460D22149CF8B800DB7F0B /* IRRecurrenceMachineX.h */,
+				FF460D23149CF8B800DB7F0B /* IRRecurrenceMachineX.m */,
+				FF460D1C149CF8B800DB7F0B /* Supporting Files */,
+			);
+			path = IRRecurrenceMachineX;
+			sourceTree = "<group>";
+		};
+		FF460D1C149CF8B800DB7F0B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FF460D1D149CF8B800DB7F0B /* IRRecurrenceMachineX-Info.plist */,
+				FF460D1E149CF8B800DB7F0B /* InfoPlist.strings */,
+				FF460D21149CF8B800DB7F0B /* IRRecurrenceMachineX-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
 		FF2228271463C77300541E31 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF460D11149CF8B800DB7F0B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -104,6 +167,24 @@
 			productReference = FF2228291463C77300541E31 /* libIRRecurrenceMachine.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		FF460D13149CF8B800DB7F0B /* IRRecurrenceMachineX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF460D27149CF8B800DB7F0B /* Build configuration list for PBXNativeTarget "IRRecurrenceMachineX" */;
+			buildPhases = (
+				FF460D0F149CF8B800DB7F0B /* Sources */,
+				FF460D10149CF8B800DB7F0B /* Frameworks */,
+				FF460D11149CF8B800DB7F0B /* Headers */,
+				FF460D12149CF8B800DB7F0B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IRRecurrenceMachineX;
+			productName = IRRecurrenceMachineX;
+			productReference = FF460D14149CF8B800DB7F0B /* IRRecurrenceMachineX.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -122,9 +203,21 @@
 			projectRoot = "";
 			targets = (
 				FF2228281463C77300541E31 /* IRRecurrenceMachine */,
+				FF460D13149CF8B800DB7F0B /* IRRecurrenceMachineX */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF460D12149CF8B800DB7F0B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF460D20149CF8B800DB7F0B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FF2228251463C77300541E31 /* Sources */ = {
@@ -135,7 +228,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FF460D0F149CF8B800DB7F0B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF460D24149CF8B800DB7F0B /* IRRecurrenceMachineX.m in Sources */,
+				FF460D29149CF8CE00DB7F0B /* IRRecurrenceMachine.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FF460D1E149CF8B800DB7F0B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF460D1F149CF8B800DB7F0B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FF2228341463C77300541E31 /* Debug */ = {
@@ -202,6 +315,56 @@
 			};
 			name = Release;
 		};
+		FF460D25149CF8B800DB7F0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IRRecurrenceMachineX/IRRecurrenceMachineX-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "IRRecurrenceMachineX/IRRecurrenceMachineX-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		FF460D26149CF8B800DB7F0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IRRecurrenceMachineX/IRRecurrenceMachineX-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "IRRecurrenceMachineX/IRRecurrenceMachineX-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -219,6 +382,15 @@
 			buildConfigurations = (
 				FF2228371463C77300541E31 /* Debug */,
 				FF2228381463C77300541E31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF460D27149CF8B800DB7F0B /* Build configuration list for PBXNativeTarget "IRRecurrenceMachineX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF460D25149CF8B800DB7F0B /* Debug */,
+				FF460D26149CF8B800DB7F0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

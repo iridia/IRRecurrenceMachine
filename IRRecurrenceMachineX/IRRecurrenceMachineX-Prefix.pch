@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'IRRecurrenceMachineX' target in the 'IRRecurrenceMachineX' project
+//
+
+#ifdef __OBJC__
+	#import <Cocoa/Cocoa.h>
+#endif
