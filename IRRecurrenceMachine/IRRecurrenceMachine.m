@@ -3,7 +3,7 @@
 //  IRRecurrenceMachine
 //
 //  Created by Evadne Wu on 11/4/11.
-//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2011 Iridia Productions. All rights reserved.
 //
 
 #import "IRRecurrenceMachine.h"
@@ -15,6 +15,9 @@
 @property (nonatomic, readwrite, retain) NSTimer *timer;
 @property (nonatomic, readwrite, assign) NSInteger postponingRequestCount;
 
+@property (nonatomic, readwrite, assign) void *debugInitThreadPtr;
+- (void) debugAssertThreadSafety;
+
 @end
 
 
@@ -22,6 +25,7 @@
 
 @synthesize queue, recurrenceInterval, recurringOperations, postponingRequestCount;
 @synthesize timer;
+@synthesize debugInitThreadPtr;
 
 - (void) dealloc {
 
@@ -45,12 +49,11 @@
 	if (!self)
 		return nil;
 	
-	if (!aQueue)
-		aQueue = [[[NSOperationQueue alloc] init] autorelease];
+	queue = aQueue ? aQueue : [[NSOperationQueue alloc] init];
+	recurrenceInterval = 30;
+	recurringOperations = [[NSArray array] retain];
 	
-	self.queue = aQueue;
-	self.recurrenceInterval = 30;
-	self.recurringOperations = [NSArray array];
+	debugInitThreadPtr = [NSThread currentThread];
 	
 	[self timer];
 	
@@ -99,11 +102,7 @@
 
 - (void) handleTimerFire:(NSTimer *)aTimer {
 	
-	//	BOOL didSchedule = 
 	[self scheduleOperationsNow];
-	
-	
-	//	NSParameterAssert(didSchedule);
 	
 }
 
@@ -140,7 +139,9 @@
 	__block typeof(self) nrSelf = self;
 	
 	return [[NSBlockOperation blockOperationWithBlock: ^ {
-		[nrSelf beginPostponingOperations];
+		dispatch_sync(dispatch_get_main_queue(), ^{
+			[nrSelf beginPostponingOperations];
+		});
 	}] retain];
 	
 }
@@ -150,19 +151,16 @@
 	__block typeof(self) nrSelf = self;
 	
 	return [[NSBlockOperation blockOperationWithBlock: ^ {
-		[nrSelf endPostponingOperations];
+		dispatch_sync(dispatch_get_main_queue(), ^{
+			[nrSelf endPostponingOperations];
+		});
 	}] retain];
 	
 }
 
 - (void) beginPostponingOperations {
 
-	if (![NSThread isMainThread]) {
-		[self performSelectorOnMainThread:_cmd withObject:nil waitUntilDone:YES];
-		return;
-	}
-	
-	NSParameterAssert([NSThread isMainThread]);
+	[self debugAssertThreadSafety];
 	
 	self.postponingRequestCount += 1;
 	
@@ -177,14 +175,10 @@
 
 - (void) endPostponingOperations {
 
-	if (![NSThread isMainThread]) {
-		[self performSelectorOnMainThread:_cmd withObject:nil waitUntilDone:YES];
-		return;
-	}
-	
-	NSParameterAssert([NSThread isMainThread]);
+	[self debugAssertThreadSafety];
 	
 	NSParameterAssert(postponingRequestCount > 0);
+	
 	self.postponingRequestCount -= 1;
 	
 	if (!postponingRequestCount) {
@@ -199,6 +193,12 @@
 	
 	return !!(self.postponingRequestCount);
 	
+}
+
+- (void) debugAssertThreadSafety {
+
+	NSAssert2([NSThread currentThread] == debugInitThreadPtr, @"Current Thread %@ differents from 0x%x", [NSThread currentThread], debugInitThreadPtr);
+
 }
 
 @end

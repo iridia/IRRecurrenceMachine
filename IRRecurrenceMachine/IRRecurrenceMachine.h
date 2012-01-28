@@ -3,7 +3,7 @@
 //  IRRecurrenceMachine
 //
 //  Created by Evadne Wu on 11/4/11.
-//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2011 Iridia Productions. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
