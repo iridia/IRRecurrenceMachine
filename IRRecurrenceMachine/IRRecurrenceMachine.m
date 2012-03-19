@@ -197,7 +197,7 @@
 
 - (void) debugAssertThreadSafety {
 
-	NSAssert2([NSThread currentThread] == debugInitThreadPtr, @"Current Thread %@ differents from 0x%x", [NSThread currentThread], debugInitThreadPtr);
+	NSAssert2([NSThread currentThread] == debugInitThreadPtr, @"Current Thread %@ differents from 0x%x", [NSThread currentThread], (unsigned int)debugInitThreadPtr);
 
 }
 
