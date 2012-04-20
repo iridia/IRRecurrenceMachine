@@ -101,6 +101,8 @@
 }
 
 - (void) handleTimerFire:(NSTimer *)aTimer {
+
+	NSParameterAssert(![self isPostponingOperations]);
 	
 	[self scheduleOperationsNow];
 	
